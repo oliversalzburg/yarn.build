@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "allowJs": true,
     "baseUrl": ".",
     "strict": true,
@@ -11,6 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "build",
     "declaration": true,
-    "lib": ["dom", "es2017", "esnext.asynciterable"]
+    "lib": ["dom", "es2017", "esnext.asynciterable"],
+    "skipLibCheck": true
   }
 }

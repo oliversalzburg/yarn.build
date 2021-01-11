@@ -104,6 +104,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@kablamo/eslint-plugin", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:1.0.1"],
             ["@types/jest", "npm:26.0.19"],
+            ["@types/node", "npm:14.14.20"],
             ["@typescript-eslint/eslint-plugin", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:4.12.0"],
             ["@typescript-eslint/parser", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:4.12.0"],
             ["@yarnpkg/pnpify", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:2.4.0"],
@@ -1788,6 +1789,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-13.11.1-ea46d1204d-0ced8498fb.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:13.11.1"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:14.14.20", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.20-60a93b1d39-84a9fd73de.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:14.14.20"]
           ],
           "linkType": "HARD",
         }],
@@ -11370,6 +11378,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["yarn.build", "workspace:."],
             ["@kablamo/eslint-plugin", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:1.0.1"],
             ["@types/jest", "npm:26.0.19"],
+            ["@types/node", "npm:14.14.20"],
             ["@typescript-eslint/eslint-plugin", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:4.12.0"],
             ["@typescript-eslint/parser", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:4.12.0"],
             ["@yarnpkg/pnpify", "virtual:2b6ab7c4d5c3b654ec751a2ceb16bd5e688f293fc6621cc055eec86f5e137249c52ed4207438f04e5b70e5aa8b981d7c9bf8fd489db9d6cd4b6b9ef1c9f8143e#npm:2.4.0"],
