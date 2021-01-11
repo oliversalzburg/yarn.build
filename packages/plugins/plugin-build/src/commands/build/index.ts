@@ -6,12 +6,11 @@ import {
   StreamReport,
   miscUtils,
 } from "@yarnpkg/core";
-import { PortablePath } from "@yarnpkg/fslib";
+import { PortablePath, xfs } from "@yarnpkg/fslib";
 import { Command, Usage } from "clipanion";
-import path from "path";
-
 import { EventEmitter } from "events";
 import { GetPluginConfiguration, YarnBuildConfiguration } from "../../config";
+import { ProjectAuditor } from "../audit/ProjectAuditor";
 import RunSupervisor, { RunSupervisorReporterEvents } from "../supervisor";
 
 import { addTargets } from "../supervisor/workspace";
@@ -68,7 +67,7 @@ export default class Build extends BaseCommand {
   buildLog: { [key: string]: { hash: string | undefined } } = {};
 
   @Command.Path(`build`)
-  async execute() {
+  async execute(): Promise<number> {
     const configuration = await Configuration.find(
       this.context.cwd,
       this.context.plugins
@@ -90,7 +89,7 @@ export default class Build extends BaseCommand {
           pluginConfiguration.enableBetaFeatures.targetedBuilds &&
           typeof this.buildTarget[0] === "string"
         ) {
-          targetDirectory = `${configuration.projectCwd}${path.sep}${this.buildTarget[0]}` as PortablePath;
+          targetDirectory = xfs.pathUtils.join(configuration.projectCwd as PortablePath, this.buildTarget[0] as PortablePath);
         }
 
         const { project, workspace: cwdWorkspace } = await Project.find(
@@ -156,6 +155,9 @@ export default class Build extends BaseCommand {
         });
 
         await supervisor.setup();
+
+        const projectAuditor = new ProjectAuditor(project);
+        await projectAuditor.audit({ sequential: false });
 
         await addTargets({ targetWorkspace, project, supervisor });
 

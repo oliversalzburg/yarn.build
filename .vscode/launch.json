@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run yarn.build",
+      "program": "${workspaceFolder}/.yarn/releases/yarn-2.4.0.cjs",
+      "args": ["build"],
+      "cwd": "/home/oliver/fairmanager/fairmanager/core-web3",
+      "preLaunchTask": "Build plugin",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
